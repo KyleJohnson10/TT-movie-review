@@ -10,9 +10,14 @@ import { HttpClientModule } from '@angular/common/http';
 // Pages
 import { HomepageComponent } from './pages/homepage/homepage.component';
 
+// Components
+import { HeaderComponent } from './components/header/header.component';
+
 @NgModule({
   declarations: [
-    HomepageComponent
+    AppComponent,
+    HomepageComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
