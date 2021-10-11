@@ -11,13 +11,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 
 // Components
+import { BannerComponent } from './components/banner/banner.component';
 import { HeaderComponent } from './components/header/header.component';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomepageComponent,
-    HeaderComponent
+    HeaderComponent,
+    BannerComponent,
+    SearchBarComponent
   ],
   imports: [
     BrowserModule,
