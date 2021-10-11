@@ -10,11 +10,24 @@ h4 {
 nav {
   display: flex;
   border-bottom: 2px solid #39ff14;
+
+  @media screen and (max-width: 370px) {
+    flex-wrap: wrap;
+  }
 }
 
-.title a {
-  color: #ffffff;
+.titleLink {
   text-decoration: none;
+}
+
+.title {
+  color: #ffffff;
+
+  @media screen and (max-width: 370px) {
+    margin-left: 0;
+    margin-bottom: 15px;
+    text-align: center;
+  }
 }
 
 ul {
@@ -58,6 +71,10 @@ nav{
   justify-content: flex-end;
   width: 50%;
 
+  @media screen and (max-width: 370px) {
+    justify-content: center;
+  }
+
   a {
     background: #000;
     color: #fff;
@@ -67,6 +84,10 @@ nav{
     border-radius: 5px;
     text-decoration: none;
     margin-right: 15px;
+
+    @media screen and (max-width: 370px) {
+      margin-right: 0;
+    }
 
     &:hover {
       background: #000;

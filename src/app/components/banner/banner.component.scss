@@ -19,4 +19,7 @@
 
 .app-search-bar {
   max-width: 70%;
+  @media screen and (max-width: 569px) {
+    max-width: 90%;
+  }
 }
