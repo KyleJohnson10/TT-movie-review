@@ -10,6 +10,8 @@ export class HomepageComponent implements OnInit {
 
   trendingShows: any;
   simulateLoading = true;
+  nextButton = true;
+  carouselPage = 1;
 
   constructor(public movieService: MovieService) { }
 
@@ -22,7 +24,9 @@ export class HomepageComponent implements OnInit {
   }
 
   getNextTrending() {
+    this.carouselPage++
     this.trendingShows = this.trendingShows.slice(4)
+    if (this.carouselPage === 4) this.nextButton = false;
   }
 
 }

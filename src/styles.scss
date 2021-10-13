@@ -4,6 +4,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  color: #fff;
 }
 
 body {
@@ -56,6 +57,7 @@ a {
   padding: 15px 60px;
   font-size: 18px;
   border-radius: 10px;
+  border: 1px solid #39ff14;
 
   &:hover {
     background: #000;
