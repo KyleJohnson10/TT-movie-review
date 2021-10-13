@@ -14,7 +14,7 @@ export class HeaderComponent implements OnInit {
       document.documentElement.scrollTop ||
       document.body.scrollTop ||
       0;
-    if (verticalOffset > 50) {
+    if (verticalOffset > 115) {
       this.hasScrolled = true;
     } else {
       this.hasScrolled = false;

@@ -1,1 +1,12 @@
 <app-banner></app-banner>
+<div class="container">
+  <app-spinner *ngIf="simulateLoading"></app-spinner>
+  <div class="card-container" *ngIf="!simulateLoading">
+    <app-movie-card *ngFor="let movie of trendingShows.slice(0, 4); let i = index" title="{{ movie.name }}" logo="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" rating="{{ movie.vote_average }}" releaseDate="{{ movie.first_air_date }}"></app-movie-card>
+  </div>
+
+  <div class="button-container">
+    <a class="button" (click)="getNextTrending()">SHOW MORE</a>
+  </div>
+</div>
+

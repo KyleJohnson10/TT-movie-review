@@ -53,6 +53,7 @@ nav{
   &.scrolled {
     padding: 20px 0;
     position: fixed;
+    background-color: #000;
     top: 0;
     left: 0;
     right: 0;
@@ -76,8 +77,8 @@ nav{
   }
 
   a {
-    background: #000;
-    color: #fff;
+    background: #39ff14;
+    color: #000;
     min-height: 100%;
     border: 2px solid;
     padding: 15px;
