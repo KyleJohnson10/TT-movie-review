@@ -31,13 +31,13 @@
   margin-bottom: 60px;
 }
 
-.no-results-container {
+.results-container {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 
-  h1 {
+  h1, h2 {
     margin-bottom: 30px;
   }
 }
