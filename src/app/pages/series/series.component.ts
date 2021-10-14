@@ -18,7 +18,6 @@ export class SeriesComponent implements OnInit {
   ngOnInit() {
     this.movieService.getMedia('tv', this.moviePage).then((res) => {
       this.movies = res.data.results;
-      console.log(this.movies);
       this.simulateLoading = false;
     })
   }
@@ -27,13 +26,10 @@ export class SeriesComponent implements OnInit {
     this.moviePage++
     this.movieService.getMedia('tv', this.moviePage).then((res) => {
       this.newMovies = res.data.results;
-      console.log(this.newMovies);
-      console.log(this.movies);
       this.movies = [
         ...this.movies,
         ...this.newMovies
       ]
-      console.log(this.movies);
     })
   }
 

@@ -5,8 +5,11 @@
   <div class="card-container" *ngIf="!simulateLoading">
     <app-movie-card *ngFor="let movie of trendingShows.slice(0, 4); let i = index" title="{{ movie.name }}" logo="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" rating="{{ movie.vote_average }}" releaseDate="{{ movie.first_air_date }}"></app-movie-card>
   </div>
-  <div *ngIf="nextButton && !simulateLoading" class="next-carousel">
+  <div *ngIf="carouselPage !== 4 && !simulateLoading" class="next-carousel">
     <a class="next-button button" (click)="getNextTrending()">See More</a>
+  </div>
+  <div *ngIf="carouselPage === 4 && !simulateLoading" class="next-carousel">
+    <a class="next-button button" routerLink="/series">See all trending TV shows</a>
   </div>
 </div>
 

@@ -1,0 +1,32 @@
+.container {
+  background-color: #000;
+  padding: 30px;
+}
+
+.search-results {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.single-result {
+  text-align: center;
+  color: #fff;
+
+  h1 {
+    margin-bottom: 15px;
+  }
+}
+
+.single-card {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.no--results-p {
+  margin-bottom: 60px;
+}

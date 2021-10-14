@@ -48,6 +48,7 @@
     border-radius: 0;
     width: 480px;
     height: 60px;
+    color: #000;
     border: 1px solid #ddd;
     border-right: 0;
     font-size: 16px;
@@ -96,5 +97,17 @@
 
   span {
     font-weight: bold;
+  }
+}
+
+form {
+  display: flex;
+  
+  label:first-of-type {
+    margin-right: 30px;
+  }
+
+  input {
+    margin-right: 5px;
   }
 }

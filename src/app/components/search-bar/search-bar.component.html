@@ -5,6 +5,14 @@
   </section>
   <form (submit)="submitForm()">
     <div class="search-bar-container">
+      <div class="search-bar" style="margin-bottom: 15px">
+        <form>
+          <input type="radio" id="film" name="search_type" [formControl]="MediaType" value="movie">
+          <label for="film">FILM</label><br>
+          <input type="radio" id="tv" name="search_type" [formControl]="MediaType" value="tv">
+          <label for="tv">TV SERIES</label><br>
+        </form>
+      </div>
       <div class="search-bar">
         <input type="text" class="search-bar__input" [(ngModel)]="searchTerm" [ngModelOptions]="{standalone: true}" placeholder="Search for movies / TV shows by genre and year" />
         <button class="search-bar__button">Search</button>
