@@ -1,0 +1,10 @@
+<app-banner [shortSearch]="true"></app-banner>
+<div class="container">
+  <app-spinner *ngIf="simulateLoading"></app-spinner>
+  <div class="card-container" *ngIf="!simulateLoading">
+    <app-movie-card *ngFor="let movie of movies; let i = index" title="{{ movie.title }}" logo="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" rating="{{ movie.vote_average }}" releaseDate="{{ movie.release_date }}"></app-movie-card>
+  </div>
+  <div class="button-container" *ngIf="!simulateLoading">
+    <a class="button" (click)="addMoreMovies()">SHOW MORE</a>
+  </div>
+</div>

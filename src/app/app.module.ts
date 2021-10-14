@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomepageComponent } from './pages/homepage/homepage.component';
 import { FilmsComponent } from './pages/films/films.component';
 import { SeriesComponent } from './pages/series/series.component';
+import { MediaComponent } from './pages/media/media.component';
 import { SearchResultsComponent } from './pages/search-results/search-results.component';
 
 // Components
@@ -29,6 +30,7 @@ import { DatePipe } from 'src/assets/pipes/date.pipe';
     HomepageComponent,
     FilmsComponent,
     SeriesComponent,
+    MediaComponent,
     SearchResultsComponent,
     HeaderComponent,
     BannerComponent,
