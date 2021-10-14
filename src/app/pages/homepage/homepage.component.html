@@ -3,7 +3,7 @@
   <h1 class="carousel-title">Top Trending in the last 7 days</h1>
   <app-spinner *ngIf="simulateLoading"></app-spinner>
   <div class="card-container" *ngIf="!simulateLoading">
-    <app-movie-card *ngFor="let movie of trendingShows.slice(0, 4); let i = index" title="{{ movie.name }}" logo="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" rating="{{ movie.vote_average }}" releaseDate="{{ movie.first_air_date }}"></app-movie-card>
+    <app-movie-card *ngFor="let movie of trendingShows.slice(0, 4); let i = index" mediaType="tv" id="{{ movie.id }}" title="{{ movie.name }}" logo="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" rating="{{ movie.vote_average }}" releaseDate="{{ movie.first_air_date }}"></app-movie-card>
   </div>
   <div *ngIf="carouselPage !== 4 && !simulateLoading" class="next-carousel">
     <a class="next-button button" (click)="getNextTrending()">See More</a>

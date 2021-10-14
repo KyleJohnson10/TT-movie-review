@@ -7,7 +7,7 @@
       <h2>You searched for - {{ searchResult }}</h2>
     </div>
     <div class="card-container" *ngIf="!simulateLoading">
-      <app-movie-card *ngFor="let movie of media; let i = index" title="{{ movie.title || movie.name }}" logo="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" rating="{{ movie.vote_average }}" releaseDate="{{ movie.release_date || movie.first_air_date }}"></app-movie-card>
+      <app-movie-card *ngFor="let movie of media; let i = index" id="{{ movie.id }}" mediaType="{{ mediaType }}" title="{{ movie.title || movie.name }}" logo="https://image.tmdb.org/t/p/w500{{movie.poster_path}}" rating="{{ movie.vote_average }}" releaseDate="{{ movie.release_date || movie.first_air_date }}"></app-movie-card>
     </div>
     <div class="button-container" *ngIf="!simulateLoading">
       <a class="button" (click)="seeMoreResults()">SHOW MORE</a>

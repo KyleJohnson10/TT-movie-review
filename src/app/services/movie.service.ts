@@ -20,4 +20,9 @@ export class MovieService {
     const axios = require('axios').default;
     return axios.get(`https://api.themoviedb.org/3/search/${mediaType}?api_key=a108bdb43c2b3aed218f3a481c638dbb&language=en-US&query=${searchTerm}&page=${pageNumber}&include_adult=true`)
   }
+
+  public getMediaProduct(mediaType, id) {
+    const axios = require('axios').default;
+    return axios.get(`https://api.themoviedb.org/3/${mediaType}/${id}?api_key=a108bdb43c2b3aed218f3a481c638dbb&language=en-US`)
+  }
 }
