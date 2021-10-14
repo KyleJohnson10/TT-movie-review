@@ -30,3 +30,14 @@
 .no--results-p {
   margin-bottom: 60px;
 }
+
+.no-results-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  h1 {
+    margin-bottom: 30px;
+  }
+}
