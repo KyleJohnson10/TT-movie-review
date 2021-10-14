@@ -25,9 +25,9 @@ export class SearchResultsComponent implements OnInit {
   ngOnInit() {
     this.route.paramMap.subscribe((params) => {
       const slug = params.get('slug');
-      this.mediaType = slug ? slug : '';
+      this.searchResult = slug ? slug : '';
       const urlParams = new URLSearchParams(window.location.search);
-      this.searchResult = urlParams.get('searchTerm');
+      this.mediaType = urlParams.get('mediaType');
 
       this.movieService.searchMedia(this.mediaType, '1', this.searchResult).then((res) => {
         this.media = res.data.results;

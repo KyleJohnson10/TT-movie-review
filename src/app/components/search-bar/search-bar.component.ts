@@ -20,6 +20,6 @@ export class SearchBarComponent implements OnInit {
   }
 
   submitForm() {
-    this.router.navigateByUrl(`/search/${this.MediaType.value.toLowerCase()}?searchTerm=${this.searchTerm}`);
+    this.router.navigateByUrl(`/search/${this.searchTerm}?mediaType=${this.MediaType.value}`);
   }
 }
