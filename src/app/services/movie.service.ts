@@ -25,4 +25,9 @@ export class MovieService {
     const axios = require('axios').default;
     return axios.get(`https://api.themoviedb.org/3/${mediaType}/${id}?api_key=a108bdb43c2b3aed218f3a481c638dbb&language=en-US`)
   }
+
+  public getMediaReviews(mediaType, id) {
+    const axios = require('axios').default;
+    return axios.get(`https://api.themoviedb.org/3/${mediaType}/${id}/reviews?api_key=a108bdb43c2b3aed218f3a481c638dbb&language=en-US&page=1`)
+  }
 }
