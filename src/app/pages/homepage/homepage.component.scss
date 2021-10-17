@@ -16,6 +16,11 @@
 
   .next-button {
     display: block;
+    color: #000;
     width: fit-content;
+
+    &:hover {
+      color: #fff;
+    }
   }
 }

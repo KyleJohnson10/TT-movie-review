@@ -12,8 +12,12 @@
         <p>{{ this.productData.overview }}</p>
       </div>
       <div class="right">
-        <button (click)="mail()">Homepage</button>
-        <button (click)="phone()">Website</button><br />
+        <button (click)="navigateToExternalLink(this.productData.homepage)">{{this.productData.vote_average}} <svg
+            xmlns="http://www.w3.org/2000/svg" fill="#FFD700" width="18" height="18" viewBox="0 0 24 24">
+            <path
+              d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z" />
+          </svg></button>
+        <button (click)="navigateToExternalLink(this.productData.homepage)">Website</button><br />
         <button routerLink="/contact">Write a review</button>
       </div>
     </div>
@@ -23,7 +27,7 @@
           <img class="logo" src="https://image.tmdb.org/t/p/w500{{ this.productData.poster_path }}"
             alt="{{ this.productData.name}}" />
         </div>
-        <div class="col-md-8 col-sm-12">
+        <div *ngIf="reviews.length > 0" class="col-md-8 col-sm-12">
           <h2>Reviews:</h2>
 
 
@@ -34,7 +38,7 @@
                 <div class="card-header" id="headingOne">
                   <div class="rating-container">
                     <h2 class="mb-0">
-                      {{ review.author_details.rating ? review.author_details.rating : 'n/a' }}
+                      {{ review.author_details.rating }}
                       <svg xmlns="http://www.w3.org/2000/svg" fill="#FFD700" width="18" height="18" viewBox="0 0 24 24">
                         <path
                           d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z" />

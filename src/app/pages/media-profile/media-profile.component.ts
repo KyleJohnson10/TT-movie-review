@@ -44,4 +44,8 @@ export class MediaProfileComponent implements OnInit {
       element.classList.add('show')
     }
   }
+
+  navigateToExternalLink(link) {
+    window.open(link, '_blank');
+  }
 }
