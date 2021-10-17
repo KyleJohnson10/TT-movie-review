@@ -19,6 +19,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { SearchBarComponent } from './components/search-bar/search-bar.component';
 import { MovieCardComponent } from './components/movie-card/movie-card.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
+import { ModalComponent } from './components/modal/modal.component';
 
 // Assets
 import { DatePipe } from 'src/assets/pipes/date.pipe';
@@ -35,7 +36,8 @@ import { DatePipe } from 'src/assets/pipes/date.pipe';
     SearchBarComponent,
     MovieCardComponent,
     SpinnerComponent,
-    DatePipe
+    DatePipe,
+    ModalComponent
   ],
   imports: [
     BrowserModule,

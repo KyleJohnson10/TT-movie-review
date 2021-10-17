@@ -1,0 +1,11 @@
+<div class="modal__container" *ngIf="modalActive" [class.modal__container--active]="modalActive">
+  <div class="modal__overlay" (click)="toggleModalClick()"></div>
+  <div class="modal__wrapper">
+    <div class="modal__frame">
+      <div class="modal__contents panel">
+        <ng-content></ng-content>
+      </div>
+      <div class="close-icon" (click)="toggleModalClick()"><i class="icon--alt icon--sm icon-x"></i></div>
+    </div>
+  </div>
+</div>

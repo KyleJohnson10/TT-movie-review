@@ -12,6 +12,7 @@ export class MediaProfileComponent implements OnInit {
   productId = '';
   mediaType = '';
   reviews = [];
+  reviewModalActive = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -19,6 +20,7 @@ export class MediaProfileComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    console.log(this.reviewModalActive);
     this.route.paramMap.subscribe((params) => {
       this.productId = params.get('slug');
       const urlParams = new URLSearchParams(window.location.search);
@@ -48,4 +50,8 @@ export class MediaProfileComponent implements OnInit {
   navigateToExternalLink(link) {
     window.open(link, '_blank');
   }
+
+  //toggleModal() {
+  //  this.reviewModalActive = true;
+  //}
 }
