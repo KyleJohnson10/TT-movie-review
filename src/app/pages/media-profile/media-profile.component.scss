@@ -15,6 +15,10 @@
       flex-wrap: wrap;
       align-items: center;
 
+      @media screen and (max-width: 700px) {
+        justify-content: center;
+      }
+
       button {
         background-color: #39ff14;
         border: 2px solid;
@@ -234,8 +238,21 @@ ul.breadcrumbs {
   }
 }
 
-.card-body {
-  color: #000;
+.accordion {
+  h2 {
+    color: #000;
+    text-align: left;
+  }
+
+  .rating-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card-body {
+    color: #000;
+  }
 }
 
 .row {
