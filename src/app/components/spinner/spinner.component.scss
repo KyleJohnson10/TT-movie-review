@@ -6,6 +6,10 @@
   font-size: 10px;
 }
 
+.spinnerNoMargin {
+  margin: 0 !important;
+}
+
 .spinner > div {
   background-color: #fff;
   height: 100%;

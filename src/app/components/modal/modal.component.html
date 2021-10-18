@@ -4,8 +4,10 @@
     <div class="modal__frame">
       <div class="modal__contents panel">
         <ng-content></ng-content>
+        <a (click)="toggleModalClick()" class="close--button">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="#fff" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="feather feather-x" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </a>
       </div>
-      <div class="close-icon" (click)="toggleModalClick()"><i class="icon--alt icon--sm icon-x"></i></div>
     </div>
   </div>
 </div>

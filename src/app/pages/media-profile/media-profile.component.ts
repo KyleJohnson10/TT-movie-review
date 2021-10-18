@@ -15,6 +15,8 @@ export class MediaProfileComponent implements OnInit {
   reviews = [];
   reviewModalActive = false;
   guestSessionID = '';
+  loading = false;
+  formSuccess = false;
 
   reviewScore = new FormControl('0');
 
@@ -24,7 +26,6 @@ export class MediaProfileComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    console.log(this.reviewModalActive);
     this.route.paramMap.subscribe((params) => {
       this.productId = params.get('slug');
       const urlParams = new URLSearchParams(window.location.search);
@@ -32,12 +33,10 @@ export class MediaProfileComponent implements OnInit {
       
       this.movieService.getMediaProduct(this.mediaType, this.productId).then((res) => {
         this.productData = res.data;
-        console.log(this.productData)
       })
     });
 
       this.movieService.getMediaReviews(this.mediaType, this.productId).then((res) => {
-        console.log(res.data.results);
         this.reviews = res.data.results;
       });
       this.movieService.getPostSessionID().then((res) => {
@@ -67,9 +66,13 @@ export class MediaProfileComponent implements OnInit {
   }
 
   submitReviewForm() {
+    this.loading = true;
     this.movieService.submitMediaReview(this.mediaType, this.productId, this.guestSessionID, this.reviewScore.value).then((res) => {
-      console.log(res);
       this.toggleModal();
+      this.loading = false;
+      if (res.data.success == true) {
+        this.formSuccess = true;
+      }
     })
   }
 }

@@ -1,10 +1,21 @@
 <app-modal modalActive="{{ reviewModalActive }}">
   <h2 class="modal-title">Submit your review for {{ this.productData.name || this.productData.original_title }}</h2>
   <div class="rating-input-container">
-    <input placeholder="0" type="number" id="" name="reviewScore" [formControl]="reviewScore" min="0" max="10"> <h2> / 10</h2>
+    <input placeholder="0" type="number" id="" name="reviewScore" [formControl]="reviewScore" min="0" max="10">
+    <h2> / 10</h2>
   </div>
   <div class="d-flex align-items-center justify-content-center">
-    <button (click)="submitReviewForm()" class="button">Submit review</button>
+    <button (click)="submitReviewForm()" *ngIf="loading && !formSuccess" class="button"><app-spinner noMarginClass="spinnerNoMargin"></app-spinner></button>
+    <button (click)="submitReviewForm()" *ngIf="!loading && !formSuccess" class="button">Submit review</button>
+    <button (click)="submitReviewForm()" *ngIf="formSuccess" class="button">
+      <svg width="32px" height="32px"
+        viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <g id="My-tools" stroke="#fff" stroke-width="3" fill="none" fill-rule="evenodd">
+          <path
+            d="M10.2489523,16.5437709 L17.275791,9.51690932 C17.3856311,9.40709208 17.3856311,9.22899955 17.275791,9.11915941 L16.612905,8.45625053 C16.5030649,8.34643329 16.3249952,8.34643329 16.2151551,8.45625053 L10.0500773,14.6213283 L7.7848163,12.3560673 C7.67497617,12.2462272 7.49690653,12.2462272 7.38704351,12.3560673 L6.72415751,13.0189533 C6.61431738,13.1287934 6.61431738,13.3068631 6.72415751,13.4167261 L9.85120237,16.5437709 C9.96101961,16.6535882 10.1390893,16.6535882 10.2489523,16.5437709 Z"
+            id="" fill="#FFFFFF" fill-rule="nonzero"></path>
+        </g>
+      </svg></button>
   </div>
 </app-modal>
 <app-banner [shortSearch]="true"></app-banner>

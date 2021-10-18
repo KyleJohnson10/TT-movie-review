@@ -31,7 +31,6 @@ export class SearchResultsComponent implements OnInit {
 
       this.movieService.searchMedia(this.mediaType, '1', this.searchResult).then((res) => {
         this.media = res.data.results;
-        console.log(this.media.length)
         this.simulateLoading = false;
       })
     });
