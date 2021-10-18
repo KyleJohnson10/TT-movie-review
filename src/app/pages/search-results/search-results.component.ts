@@ -2,6 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MovieService } from 'src/app/services/movie.service';
 
+export interface IMedia {
+  id: number;
+  title: string,
+  name: string,
+  poster_path: string,
+  vote_average: boolean,
+  release_date: string,
+  first_air_date: string
+}
+
 @Component({
   selector: 'app-search-results',
   templateUrl: './search-results.component.html',
@@ -9,9 +19,8 @@ import { MovieService } from 'src/app/services/movie.service';
 })
 export class SearchResultsComponent implements OnInit {
 
-  media: any;
-  newMedia: any;
-  searchResultsData: any;
+  media: Array<IMedia>;
+  newMedia: Array<IMedia>;
   simulateLoading = true;
   searchResult = '';
   mediaType = '';

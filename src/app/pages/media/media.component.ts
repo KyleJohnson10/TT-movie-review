@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from '@angular/router';
 import { MovieService } from "src/app/services/movie.service";
+import { IMedia } from "../search-results/search-results.component";
 
 @Component({
   selector: "app-media",
@@ -8,8 +9,8 @@ import { MovieService } from "src/app/services/movie.service";
   styleUrls: ["./media.component.scss"],
 })
 export class MediaComponent implements OnInit {
-  movies: any;
-  newMovies: any;
+  movies: Array<IMedia>;
+  newMovies: Array<IMedia>;
   simulateLoading = true;
   moviePage = 1;
   slug = ''

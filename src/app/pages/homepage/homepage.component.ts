@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MovieService } from 'src/app/services/movie.service';
-
+import { IMedia } from '../search-results/search-results.component';
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
@@ -8,7 +8,7 @@ import { MovieService } from 'src/app/services/movie.service';
 })
 export class HomepageComponent implements OnInit {
 
-  trendingShows: any;
+  trendingShows: Array<IMedia>;
   simulateLoading = true;
   carouselPage = 1;
 

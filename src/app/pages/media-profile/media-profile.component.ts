@@ -2,6 +2,7 @@ import { Component, EventEmitter, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { MovieService } from 'src/app/services/movie.service';
+import { IMedia } from '../search-results/search-results.component';
 @Component({
   selector: 'app-media-profile',
   templateUrl: './media-profile.component.html',
@@ -9,7 +10,7 @@ import { MovieService } from 'src/app/services/movie.service';
 })
 export class MediaProfileComponent implements OnInit {
 
-  productData: any;
+  productData: Array<IMedia>;
   productId = '';
   mediaType = '';
   reviews = [];
