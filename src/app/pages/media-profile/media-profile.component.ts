@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { MovieService } from 'src/app/services/movie.service';
 @Component({
@@ -13,6 +14,9 @@ export class MediaProfileComponent implements OnInit {
   mediaType = '';
   reviews = [];
   reviewModalActive = false;
+  guestSessionID = '';
+
+  reviewScore = new FormControl('0');
 
   constructor(
     private route: ActivatedRoute,
@@ -36,6 +40,9 @@ export class MediaProfileComponent implements OnInit {
         console.log(res.data.results);
         this.reviews = res.data.results;
       });
+      this.movieService.getPostSessionID().then((res) => {
+        this.guestSessionID = res.data.guest_session_id;
+      });
   }
 
   toggleAccordion(i) {
@@ -51,7 +58,18 @@ export class MediaProfileComponent implements OnInit {
     window.open(link, '_blank');
   }
 
-  //toggleModal() {
-  //  this.reviewModalActive = true;
-  //}
+  toggleModal() {
+    if (this.reviewModalActive) {
+      this.reviewModalActive = false;
+    } else {
+      this.reviewModalActive = true;
+    }
+  }
+
+  submitReviewForm() {
+    this.movieService.submitMediaReview(this.mediaType, this.productId, this.guestSessionID, this.reviewScore.value).then((res) => {
+      console.log(res);
+      this.toggleModal();
+    })
+  }
 }

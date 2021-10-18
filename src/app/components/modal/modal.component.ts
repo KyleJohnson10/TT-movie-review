@@ -15,7 +15,7 @@ export class ModalComponent implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.modalActive);
+    this.modalActive = false;
   }
 
   toggleModalClick() {
